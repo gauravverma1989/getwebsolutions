@@ -1,0 +1,30 @@
+#home {
+    height:50vh !important;
+}
+
+.design-twenty {
+    background-position: unset !important;
+}
+
+.section-sub-header {
+    margin: 60px 0px 0px 0px !important;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .header-img {
+        background-position-x:right !important;
+    }
+
+.design-twenty {
+    background-position-x: -110px !important;
+}
+}
+
+/* social-icons css */
+@media only screen and (max-width: 1200px) {
+    .contact-bar {
+        top:175px !important;
+    }
+}
+
