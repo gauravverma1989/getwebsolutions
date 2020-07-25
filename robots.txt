@@ -1,7 +1,3 @@
 User-agent: *
-Disallow: /clinic-management-system/
-Disallow: /E-LearningSystem/
-Disallow: /games/
 Disallow: /cgi-bin/
-Disallow: /NotesAppFinal/
 Sitemap: https://www.getwebsolutions.co/sitemap.xml
