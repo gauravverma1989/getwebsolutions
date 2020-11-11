@@ -1516,7 +1516,8 @@ header {
 
   .main-btn , .default-btn , .outline-btn , .white-btn  {
   		padding: 8px 22px;
-  		font-size:14px;
+          /* font-size:14px; */
+          font-size:2rem;
 	}
 
   .home-content h1 {
