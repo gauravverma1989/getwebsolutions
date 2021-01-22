@@ -862,7 +862,11 @@
 
 				<!-- contact form -->
 				<div class="col-md-8 col-md-offset-2">
-					<form class="contact-form" method="post" action="headerform.php">
+					<div id="response-success" style="display:none; background-color:green; color:white; text-align:center; padding:1rem 0rem;">	
+					</div>
+					<div id="response-failure" style="display:none; background-color:red; color:white; text-align:center; padding:1rem 0rem;">	
+					</div>
+					<form id="myform" class="contact-form">
 						<input name="name" type="text" class="input" placeholder="Name" required>
 						<input name="email" type="email" class="input" placeholder="Email" required>
 						<input name="phone" type="number" class="input" placeholder="Mobile Number">
@@ -975,6 +979,33 @@
 		new WOW().init();
 	});
 	</script>
+	<script>
+    (function($){
+        function processForm( e ){
+            $.ajax({
+                url: 'headerform.php',
+                dataType: 'text',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded',
+				// data: $(this).serialize(),
+                success: function( data, textStatus, jQxhr ){
+					// $('#response pre').html( data );
+					setTimeout(function delay(){ $('#response-success').css("display" , "block").text("form submitted successfully" ); }, 2000);
+					// $('#response-success').css("display" , "block").text("form submitted successfully" );
+                },
+                error: function( jqXhr, textStatus, errorThrown ){
+					// console.log( errorThrown );
+					$('#response-failure').css("display" , "block").text("error submitting form. Please try after sometime" );
+                }
+            });
+			
+            e.preventDefault();
+        }
+		
+		
+        $('#myform').submit( processForm);
+    })(jQuery);
+</script>
 	<script type="text/javascript">function add_chatinline(){var hccid=60380798;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}add_chatinline(); </script>
 </body>
 
