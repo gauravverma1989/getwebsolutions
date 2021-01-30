@@ -11,7 +11,7 @@ if (isset($_POST['name'])  && isset($_POST['email']) && isset($_POST['phone']) &
 	}	else{
 			$body = $name."\n".$email."\n".$phone."\n".$message;
 			if(mail('getwebsolutionsgurgaon@gmail.com','Get Web Solutions - Enquiry Form', $body ,'From: <enquiry@getwebsolutions.co>')){
-				// header("Location: https://www.getwebsolutions.co/thankyou.html"); 
+				header("Location: https://www.getwebsolutions.co/thankyou.html"); 
 				/* Redirect browser */
 				exit();
 

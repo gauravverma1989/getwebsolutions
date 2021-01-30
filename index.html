@@ -866,7 +866,7 @@
 					</div>
 					<div id="response-failure" style="display:none; background-color:red; color:white; text-align:center; padding:1rem 0rem;">	
 					</div>
-					<form id="myform" class="contact-form">
+					<form id="myform" class="contact-form" action="https://getwebsolutions.co/headerform.php" method="post">
 						<input name="name" type="text" class="input" placeholder="Name" required>
 						<input name="email" type="email" class="input" placeholder="Email" required>
 						<input name="phone" type="number" class="input" placeholder="Mobile Number">
@@ -979,23 +979,24 @@
 		new WOW().init();
 	});
 	</script>
-	<script>
+	<!-- <script>
     (function($){
         function processForm( e ){
             $.ajax({
-                url: 'headerform.php',
-                dataType: 'text',
+                url: 'https://getwebsolutions.co/headerform.php',
+                // dataType: 'text',
                 type: 'post',
                 contentType: 'application/x-www-form-urlencoded',
 				// data: $(this).serialize(),
                 success: function( data, textStatus, jQxhr ){
+					console.log( data );
 					// $('#response pre').html( data );
-					setTimeout(function delay(){ $('#response-success').css("display" , "block").text("form submitted successfully" ); }, 2000);
+					// setTimeout(function delay(){ $('#response-success').css("display" , "block").text("form submitted successfully" ); }, 2000);
 					// $('#response-success').css("display" , "block").text("form submitted successfully" );
                 },
                 error: function( jqXhr, textStatus, errorThrown ){
-					// console.log( errorThrown );
-					$('#response-failure').css("display" , "block").text("error submitting form. Please try after sometime" );
+					console.log( errorThrown );
+					// $('#response-failure').css("display" , "block").text("error submitting form. Please try after sometime" );
                 }
             });
 			
@@ -1005,7 +1006,7 @@
 		
         $('#myform').submit( processForm);
     })(jQuery);
-</script>
+</script> -->
 	<script type="text/javascript">function add_chatinline(){var hccid=60380798;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}add_chatinline(); </script>
 </body>
 
