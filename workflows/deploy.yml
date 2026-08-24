@@ -1,9 +1,9 @@
-name: Deploy Website to GitHub Pages
+name: Deploy GetWebSolutions
 
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 permissions:
@@ -13,24 +13,24 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
+    runs-on: ubuntu-latest
 
-      - name: Configure GitHub Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload website
-        uses: actions/upload-pages-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: .
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
